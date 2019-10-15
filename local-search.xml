@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>JAVA知识点总结</title>
+    <link href="undefined2019/10/13/JAVA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/"/>
+    <url>2019/10/13/JAVA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h3 id="JAVA面向对象知识点总结"><a href="#JAVA面向对象知识点总结" class="headerlink" title="JAVA面向对象知识点总结"></a>JAVA面向对象知识点总结</h3><p>第二章 类和对象</p><ul><li>1.面向对象概念：</li><li>2.类的创建</li><li>语法：public class 类名{}</li><li>File—&gt;new—&gt;class—&gt;类名</li><li>3.创建对象</li><li>类名 对象名=new 类名();</li><li>对象名.方法名(); 对象名.属性</li><li>4.构造方法：方法名和类名相同,没有返回值</li><li>public class 类名{</li><li>public 类名(){}//主要的做用是初始化操作</li><li>}</li><li>5.构造方法重载</li><li>在同一个类中，方法名相同，参数个数，顺序，类型不相同的构造方法</li><li>public class 类名{</li><li>public 类名(){}</li><li>public 类名(String name,int age){}</li><li>}</li><li>6.构造方法的执行</li><li>new 类名();—&gt;执行构造方法</li><li>super();—&gt;执行了父类的构造方法</li><li>7.static静态修饰符</li><li>静态修饰符可以修饰属性，方法，代码块</li><li>类名.属性      类名.方法名</li><li>8.java内存（栈和堆，static，方法区，gc（垃圾回收机制））</li><li></li><li>第三章 面向对象三大特征—封装</li><li>1.封装的概念</li><li>2.封装的步骤</li><li>1.把属性私有化（private）</li><li>2.对这些属性设置get和set方法</li><li>3.调用处理这些方法</li><li>3.封装的作用：避免一些用一些不合乎常理的操作</li><li>4.修饰符</li><li>public—&gt;公共的：在一个项目中都可以访问，权限最高</li><li>private—&gt;私有的：只能在本类中进行访问，权限最低</li><li>protected—&gt;安全的，受保护的：同一个包能进行访问，继承中之类可以访问父类</li><li>default—&gt;默认的：同一个包能访问</li><li>第四章 面向对象三大特征—继承</li><li>1.继承的概念：父亲儿子，电影《西虹市首富》</li><li>2.继承的关键字：extends</li><li>3.继承的语法：</li><li>public class 类名  extends 父类{}</li><li>4.使用，在之类中：</li><li>可以直接调用父类的非私有属性和方法</li><li>可以用super.方法     super.属性</li><li>5.父类构造方法调用：super();</li><li>调用父类的构造方法必须在之类中调用</li><li>必须实在之类构造方法的第一行代码</li><li>6.重写@Override</li><li>必须继承</li><li>方法名一致，参数个数，顺序，类型全部一致<br> 第五章 面向对象（多态）</li><li>1.多态的概念</li><li>2.多态的必要条件</li><li>继承</li><li>重写</li><li>父类引用指向子类对象（向上转型）</li><li>3.多态的使用</li><li>public class Father{</li><li>public void cooking(){</li><li>System.out.println(“米饭”);</li><li>}</li><li>}</li><li>public class Son extends Father{</li><li>@Override</li><li>public void cooking(){</li><li>System.out.println(“熬粥”);</li><li>}</li><li>}</li><li>public class Test {</li><li>public static void main(String[] args) {</li><li>Father son=new Son();</li><li>son.cooking();</li><li>}</li><li>}</li><li>4.向下转型</li><li>Son son=(Son)father;</li><li>第六章 抽象</li><li>1.抽象的概念</li><li>2.抽象的关键字</li><li>abstract</li><li>可以修饰类，可以修饰方法</li><li>3.抽象的用法</li><li>//抽象类</li><li>public abstract class 类名{</li><li>//抽象方法没有方法体</li><li>public abstract void 方法名();    </li><li>}</li><li>//当父类是抽象类的时候，子类必须重写父类里面的抽象方法</li><li>4.final修饰符：最终的</li><li>修饰变量，修饰方法，修饰类</li><li>1.当修饰变量时，变量转换成常量，常量的值不能改变</li><li>final int a=18;//a=18;不能改变,必须给一个初始值</li><li>2.当修饰方法时，该方法不能被重写</li><li>3.当修饰类时，该类不能被继承</li><li>第七章 接口</li><li>1.接口的概念</li><li>2.接口的关键字</li><li>interface</li><li>3.接口的语法</li><li>public interface 接口名{}</li><li>File—&gt;new—&gt;interface//创建接口</li><li>4.接口的用法</li><li>实现接口的关键字  implements</li><li>public interface 接口名{</li><li>//接口是纯抽象类</li><li>//接口里面的方法都是抽象方法</li><li>void setData();</li><li>}</li><li>public class Play implements 接口名{</li><li>@Override</li><li>void setData(){</li><li>}</li><li>}</li><li>public class Test {</li><li>public static void main(String[] args) {</li><li>Play play=new Play();</li><li>play.setData();</li><li>}</li><li>}</li><li>注意接口可以进行多继承</li><li>public interface 接口名 extends 接口名，接口名{}</li><li>一般用法</li><li>public class 类名 extends 父类 implements 接口，接口{}</li><li>第八章 集合框架</li><li>1.ArrayList</li><li>1.用法</li><li>ArrayList list=new ArrayList();</li><li>list.add();//添加数据</li><li>list.get();//获取数据</li><li>2.Map</li><li>用法</li><li>Map map=new HasMap();</li><li>map.put(key,value);//key不能重复</li><li>map.get(key);//获取key对象的value</li><li>3.泛型</li><li>ArrayList<string> list=new ArrayList&gt;<string>();</string></string></li><li>Map&lt;String,String&gt; map=new HasMap&lt;String,String&gt;();</li><li>ArrayList&lt;Map&lt;String,String&gt;&gt; list=new ArrayList&gt;&lt;Map&lt;String,String&gt;&gt;();</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
