@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-10-14T07:43:59.831Z</updated>
+  <updated>2019-10-30T09:45:17.333Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>多态的有关讲解</title>
+    <link href="http://yoursite.com/2019/10/24/%E5%A4%9A%E6%80%81%E7%9A%84%E6%9C%89%E5%85%B3%E8%AE%B2%E8%A7%A3/"/>
+    <id>http://yoursite.com/2019/10/24/多态的有关讲解/</id>
+    <published>2019-10-24T11:11:37.000Z</published>
+    <updated>2019-10-30T09:45:17.333Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="JAVA多态讲解"><a href="#JAVA多态讲解" class="headerlink" title="JAVA多态讲解"></a>JAVA多态讲解</h3><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>什么叫多态？多态就是一种事物可以有多种表现形式</p><h3 id="多态三要素"><a href="#多态三要素" class="headerlink" title="多态三要素"></a>多态三要素</h3><p>1.被动方必须有继承关系</p><p>2.子类一般都要重写父类方法</p><p>3.必须将主动方的功能函数的参数设置为 被动方父类的类型</p><h3 id="举个例子司机开车"><a href="#举个例子司机开车" class="headerlink" title="举个例子司机开车"></a>举个例子司机开车</h3><p> 假如说司机会开汽车  我们需要定义个汽车的类  然后在司机类中添加会开汽车的的方法<br>假如说司机会开卡车 我们需要再定义一个卡车的类  然后在司机类中添加会开卡车的方法下面看下传统的调用方式  代码如下：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="class"><span class="keyword">class</span>` `<span class="title">Car</span>``</span>&#123;``    ``<span class="keyword">private</span>` `String name;` `    ``<span class="comment">//无参 构造方法``    ``public` `Car()&#123;&#125;``    ``// 有参构造方法``    ``public` `Car(String name)&#123;``        ``this``.name = name;``    ``&#125;``    ``public` `void` `setName(String name)&#123;``        ``this``.name = name;``    ``&#125;``    ``public` `String getName()&#123;``        ``return` `this``.name;``    ``&#125;``    ``public` `void` `run()&#123;&#125;``&#125;` `class` `Bus ``extends` `Car``&#123;``    ``public` `Bus()&#123;&#125;``    ``public` `Bus(String name)&#123;``        ``super``(name);``    ``&#125;``    ``public` `void` `run()&#123;``        ``System.out.println(``"公交车在跑"``);``    ``&#125;``&#125;` `class` `SmallCar ``extends` `Car``&#123;``    ``public` `SmallCar()&#123;&#125;``    ``public` `SmallCar(String name)&#123;``        ``super``(name);``    ``&#125;``    ``public` `void` `run()&#123;``        ``System.out.println(``"小轿车在跑"``);``    ``&#125;``&#125;` `class` `Drivers``&#123;``    ``//假如司机会开公交车``    ``public` `void` `driverBus(Bus b)&#123;``        ``b.run();``    ``&#125;` `    ``//假如司机会开小轿车``    ``public` `void` `driverSmallCar(SmallCar smcar)&#123;``        ``smcar.run();``    ``&#125;``&#125;`   `class`  `TestDt``&#123;``    ``public` `static` `void` `main(String[] args)``    ``&#123;``        ``Drivers d = ``new` `Drivers();``        ` `        ``//司机开公交车``        ``d.driverBus(``new` `Bus(``"公交车"``));``        ``d.driverSmallCar(``new` `SmallCar(``"小轿车"``));``    ``&#125;``&#125;`</span></span><br></pre></td></tr></table></figure><p> 正如上面的列子 在添加司机开其他的车 就会重复上面的行为 缺点是 扩展性比较差，后期代码维护困难。</p><p><strong>然后我们用多态的写法优化上述例子 代码如下：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">`<span class="class"><span class="keyword">class</span>` `<span class="title">Car</span>``</span>&#123;``    ``<span class="keyword">private</span>` `String name;` `    ``<span class="comment">//无参 构造方法``    ``public` `Car()&#123;&#125;``    ``// 有参构造方法``    ``public` `Car(String name)&#123;``        ``this``.name = name;``    ``&#125;``    ``public` `void` `setName(String name)&#123;``        ``this``.name = name;``    ``&#125;``    ``public` `String getName()&#123;``        ``return` `this``.name;``    ``&#125;``    ``public` `void` `run()&#123;&#125;``&#125;` `class` `Bus ``extends` `Car``&#123;``    ``public` `Bus()&#123;&#125;``    ``public` `Bus(String name)&#123;``        ``super``(name);``    ``&#125;``    ``public` `void` `run()&#123;``        ``System.out.println(``"公交车在跑"``);``    ``&#125;``&#125;` `class` `SmallCar ``extends` `Car``&#123;``    ``public` `SmallCar()&#123;&#125;``    ``public` `SmallCar(String name)&#123;``        ``super``(name);``    ``&#125;``    ``public` `void` `run()&#123;``        ``System.out.println(``"小轿车在跑"``);``    ``&#125;``&#125;` `class` `Drivers``&#123;``    ``public` `void` `driverCar(Car car)&#123;``        ``car.run();``    ``&#125;``&#125;`   `class`  `TestDt``&#123;``    ``public` `static` `void` `main(String[] args)``    ``&#123;``        ``Drivers d = ``new` `Drivers();``        ` `        ``d.driverCar(``new` `Bus(``"公交车"``));``        ``d.driverCar(``new` `SmallCar(``"小轿车"``));``    ``&#125;``&#125;`</span></span><br></pre></td></tr></table></figure><p> 比较第一种写法  假如司机还会开其他的车 只需要添加会开这种车的类就行  司机类不需要再添加其它功能方法 。代码简介  后期维护比较方便  这种编写多态的形式也叫向上转型。</p><p>但是要想调用子类独有的方法必须向下转型才能调用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;JAVA多态讲解&quot;&gt;&lt;a href=&quot;#JAVA多态讲解&quot; class=&quot;headerlink&quot; title=&quot;JAVA多态讲解&quot;&gt;&lt;/a&gt;JAVA多态讲解&lt;/h3&gt;&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+    
+      <category term="JAVA面向对象" scheme="http://yoursite.com/categories/JAVA%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    
+    
+      <category term="JAVA多态" scheme="http://yoursite.com/tags/JAVA%E5%A4%9A%E6%80%81/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA知识点总结</title>
