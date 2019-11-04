@@ -14,7 +14,7 @@
   <meta name="description" content>
   <meta name="author" content="WyAndLjy">
   <meta name="keywords" content>
-  <title>Tag - JAVA多态 ~ Blue&#39;s caveolae</title>
+  <title>JAVA对象内存图分析与详解 ~ Blue&#39;s caveolae</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -90,7 +90,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/bqbj.png')no-repeat center center;
+         style="background: url('/img/wzybj.png')no-repeat center center;
            background-size: cover;
            background-attachment: fixed;">
       <div class="full-bg-img">
@@ -100,6 +100,9 @@
               
             </span>
 
+            
+              <br>
+              <p class="mt-3">Monday, November 4th 2019, 4:40 pm</p>
             
           </div>
 
@@ -111,27 +114,88 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">1 posts in total.</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <h1 id="JAVA对象内存图分析与详解"><a href="#JAVA对象内存图分析与详解" class="headerlink" title="JAVA对象内存图分析与详解"></a>JAVA对象内存图分析与详解</h1><p>讲Java对象内存图之前先了解一下以下几个概念：</p>
+<p><img src="/2019/11/04/JAVA对象内存图分析与详解/D:%5Chexo%5Cblog%5Csource_posts%5CJAVA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%A6%E8%A7%A3%5CIMGONE.jpg" srcset="/img/loading.gif" alt></p>
+<p><font color="#100101" size="4" face="微软雅黑"><strong>堆区</strong></font>：1.存储new出来的对象，每个对象都包含一个与之对应的class的信息。(class的目的是得到操作指令) 2.jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身 。</p>
+<p><font color="#100101" size="4" face="微软雅黑"><strong>栈区</strong></font>：1.每个线程包含一个栈区，栈中只保存基础数据类型的值和对象以及基础数据的引用。2.每个栈中的数据(基础数据类型和对象引用)都是私有的，其他栈不能访问。 3.栈分为3个部分：基本类型变量区、执行环境上下文、操作指令区(存放操作指令)</p>
+<p><font color="#100101" size="4" face="微软雅黑"><strong>·方法区</strong></font>：1.又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的class和static变量。 2.方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。</p>
+<p><img src="/2019/11/04/JAVA对象内存图分析与详解/D:%5Chexo%5Cblog%5Csource_posts%5CJAVA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%A6%E8%A7%A3%5CIMGTWO.jpg" srcset="/img/loading.gif" alt></p>
+<h2 id="对象内存图"><a href="#对象内存图" class="headerlink" title="对象内存图"></a>对象内存图</h2><h4 id="1、一个对象调用一个方法内存图"><a href="#1、一个对象调用一个方法内存图" class="headerlink" title="1、一个对象调用一个方法内存图"></a>1、一个对象调用一个方法内存图</h4><p><img src="/2019/11/04/JAVA对象内存图分析与详解/D:%5Chexo%5Cblog%5Csource_posts%5CJAVA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%A6%E8%A7%A3%5CIMGTHREE.jpg" srcset="/img/loading.gif" alt></p>
+<p>首先JVM运行一个class文件时，使用类加载器先将Demo类加载到方法区，然后main方法压栈（入栈）。</p>
+<p>在栈中运行main方法，当jvm看到Phone时，会自动把Phone类加载到方法区；当看到局部变量p时，会在栈中开辟一块空间；当看到new Phone（）时，会在堆内存中开辟空间，并将堆内存中的对应地址0x123赋值给p;还会拿到方法区的地址值指向方法区。</p>
+<p>·在main方法中运行到给对象p的属性赋值时，通过地址去堆内存中找到相应属性并赋值，运行p.sendMessage（）这一步时，也是根据地址值去堆内存中找到相应的对象，再用对象去方法区中找到sendMessage（）方法，然后将sendMessage（）方法压到栈中（入栈），调用完毕sendMessage（）方法会出栈。</p>
+<p>·main方法运行结束后会出栈。</p>
+<p>通过以上步骤描述，我们可以理解，在栈内存中运行的方法，遵循”先进后出，后进先出”的原则。变量p指向堆内存中的空间，寻找方法信息，去执行该方法。</p>
+<h4 id="2、两个对象调用同一个方法内存图"><a href="#2、两个对象调用同一个方法内存图" class="headerlink" title="2、两个对象调用同一个方法内存图"></a>2、两个对象调用同一个方法内存图</h4><p><img src="/2019/11/04/JAVA对象内存图分析与详解/D:%5Chexo%5Cblog%5Csource_posts%5CJAVA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%A6%E8%A7%A3%5CIMGFOUR.jpg" srcset="/img/loading.gif" alt></p>
+<p>对象调用方法时，根据对象中方法标记（地址值），去类中寻找方法信息。这样哪怕是多个对象，方法信息只保存一份，节约内存空间。</p>
+<h4 id="3、一个引用，作为参数传递到方法中内存图"><a href="#3、一个引用，作为参数传递到方法中内存图" class="headerlink" title="3、一个引用，作为参数传递到方法中内存图"></a>3、一个引用，作为参数传递到方法中内存图</h4><p><img src="/2019/11/04/JAVA对象内存图分析与详解/D:%5Chexo%5Cblog%5Csource_posts%5CJAVA%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%9B%BE%E5%88%86%E6%9E%90%E4%B8%8E%E8%AF%A6%E8%A7%A3%5CIMGFIVE.jpg" srcset="/img/loading.gif" alt></p>
+<p>引用类型作为参数，传递的是地址值。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+              <p>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/JAVA%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">JAVA面向对象</a>
+                  &nbsp;
+                
+              </p>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/JAVA%E5%86%85%E5%AD%98">JAVA内存</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="/img/skm.png" srcset="/img/loading.gif"  class="rounded mx-auto d-block mt-5" style="width:310px; height:175px;"> 博主初来乍到还有许多不懂的地方，慢慢进步！您的赏识是我的动力，今天你给我一块钱，明天我还你一片天！
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
     
-    <a href="/2019/10/24/多态的有关讲解/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">多态的有关讲解</span>
-      <span style="float: right;">10-24</span>
-    </a>
-  
+      <br><br>
+      
+      
+
+    
+  </div>
 </div>
 
 <script>
@@ -231,12 +295,6 @@ setTimeout(function(){i()},100)
 }();
 
 </script>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
   </main>
 
@@ -295,6 +353,11 @@ setTimeout(function(){i()},100)
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -310,7 +373,7 @@ setTimeout(function(){i()},100)
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Do - JAVA多态&nbsp;",
+        "JAVA对象内存图分析与详解&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

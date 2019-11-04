@@ -133,6 +133,55 @@
     
     
       <div class="col-12 col-md-4 m-auto">
+        <a href="/2019/11/04/JAVA对象内存图分析与详解/" target="_self">
+          <img src="/img/JAVAnc.jpg" srcset="/img/loading.gif" alt="JAVA对象内存图分析与详解" class="img-fluid rounded z-depth-3 index-thumbnails">
+        </a>
+      </div>
+    
+    <div class="col-12 col-md-8 m-auto">
+      <a href="/2019/11/04/JAVA对象内存图分析与详解/">
+        <p class="h4 index-header">JAVA对象内存图分析与详解</p>
+        
+        
+          
+        
+        <div class="index-excerpt" >
+          <div class="index-text mb-1">JAVA对象内存图分析与详解讲Java对象内存图之前先了解一下以下几个概念：
+
+堆区：1.存储new出来的对象，每个对象都包含一个与之对应的class的信息。(class的目的是得到操作指令) 2.jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身 。
+栈区：1.每个线程包含一个栈区，栈中只保存基础数据类型的值和对象以及基础数据的引用。2.每个栈中的数据(基础数据类型和对象引用)都是私有的，其他栈不能访问。 3.栈分为3个部分：基本类型变量区、执行环境上下文、操作指令区(存放操作指令)
+·方法区：1.又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的class和static变量。 2.方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。
+
+对象内存图1、一个对象调用一个方法内存图
+首先JVM运行一个class文件时，使用类加载器先将Demo类加载到方法区，然后main方法压栈（入栈）。
+在栈中运行main方法，当jvm看到Phone时，会自动把Phone类加载到方法区；当看到局部变量p时，会在栈中开辟一块空间；当看</div>
+        </div>
+      </a>
+
+      <div>
+        
+          <i class="iconfont icon-riqi2"></i>&nbsp;2019-11-04&nbsp;&nbsp;
+        
+        
+          <i class="iconfont icon-inbox"></i>
+          
+            <a href="/categories/JAVA%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1">JAVA面向对象</a>&nbsp;
+          &nbsp;
+        
+        
+          <i class="iconfont icon-tag"></i>
+          
+            <a href="/tags/JAVA%E5%86%85%E5%AD%98">JAVA内存</a>&nbsp;
+          
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 mx-auto">
+    
+    
+      <div class="col-12 col-md-4 m-auto">
         <a href="/2019/10/31/JSP九大内置对象/" target="_self">
           <img src="/img/JSPnzdx.jpg" srcset="/img/loading.gif" alt="JSP九大内置对象" class="img-fluid rounded z-depth-3 index-thumbnails">
         </a>
@@ -548,6 +597,6 @@ setTimeout(function(){i()},100)
     }
   </script>
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":280,"height":570},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-hijiki"},"display":{"position":"right","width":250,"height":450},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 
 </html>
