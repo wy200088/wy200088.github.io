@@ -14,7 +14,7 @@
   <meta name="description" content>
   <meta name="author" content="Blue">
   <meta name="keywords" content>
-  <title>Tag ~ Blue&#39;s caveolae</title>
+  <title>给博客插入网易云音乐 ~ Blue&#39;s caveolae</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -90,7 +90,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/bqbj.png')no-repeat center center;
+         style="background: url('/img/wzybj.png')no-repeat center center;
            background-size: cover;
            background-attachment: fixed;">
       <div class="full-bg-img">
@@ -100,6 +100,9 @@
               
             </span>
 
+            
+              <br>
+              <p class="mt-3">Wednesday, November 6th 2019, 10:01 am</p>
             
           </div>
 
@@ -111,16 +114,85 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/Hexo添加音乐/" style="font-size: 15px; color: #bbe">Hexo添加音乐</a> <a href="/tags/JAVA内存/" style="font-size: 15px; color: #bbe">JAVA内存</a> <a href="/tags/JAVA多态/" style="font-size: 15px; color: #bbe">JAVA多态</a> <a href="/tags/JAVA总结/" style="font-size: 15px; color: #bbe">JAVA总结</a> <a href="/tags/JSP/" style="font-size: 15px; color: #bbe">JSP</a> <a href="/tags/Web/" style="font-size: 15px; color: #bbe">Web</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <meta name="referrer" content="no-referrer">
+
+<h1 id="Hexo博客插入网易云音乐"><a href="#Hexo博客插入网易云音乐" class="headerlink" title="Hexo博客插入网易云音乐"></a>Hexo博客插入网易云音乐</h1><h4 id="一、选择自己喜欢的音乐"><a href="#一、选择自己喜欢的音乐" class="headerlink" title="一、选择自己喜欢的音乐"></a>一、选择自己喜欢的音乐</h4><p>  首先你要先去网易云音乐的官网寻找自己喜欢的音乐，不过有些音乐是有版权的有些音乐是没有版权的，有版权的可以生成外联播放器，没有版权的则是不能生成的，所以第一步要选好自己喜欢的音乐也是看清楚自己喜欢的音乐有没有版权。</p>
+<img src="https://img2018.cnblogs.com/blog/1242355/201903/1242355-20190302164911990-1606880343.png" srcset="/img/loading.gif">
+
+<p>可以生成的话就会出现这个东西~</p>
+<img src="https://img2018.cnblogs.com/blog/1242355/201903/1242355-20190302165443246-736866412.png" srcset="/img/loading.gif">
+
+<h4 id="二、添加到博客中"><a href="#二、添加到博客中" class="headerlink" title="二、添加到博客中"></a>二、添加到博客中</h4><p>  在上一步中我们已经获取到网易云音乐插件的HTML代码，然后我们就可以找到需要加入音乐的页面插入这个代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"music163player"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">280</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=33911781&amp;auto=1&amp;height=66"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>当然你还可以用<font color="#blue" face="微软雅黑">CSS position属性</font>进行定位，可以说是想放到页面的哪里就放到哪里。</p>
+<p><font color="#00BFFF" face="微软雅黑" size="3">好了添加网易云音乐插件很简单，其实就是将代码插入你想要个页面的html代码里就好了，主题不同可能你需要插入到的文件也不同，所以在插入的时候自己一定要搞明白自己的主题哪个文件是哪个界面，拜拜~</font></p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+              <p>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/Hexo%E5%8D%9A%E5%AE%A2">Hexo博客</a>
+                  &nbsp;
+                
+              </p>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/Hexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90">Hexo添加音乐</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="/img/skm.png" srcset="/img/loading.gif"  class="rounded mx-auto d-block mt-5" style="width:310px; height:175px;"> 博主初来乍到还有许多不懂的地方，慢慢进步！您的赏识是我的动力，今天你给我一块钱，明天我还你一片天！
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
+    
+      <br><br>
+      
+      
+
+    
+  </div>
 </div>
 
 <script>
@@ -220,11 +292,6 @@ setTimeout(function(){i()},100)
 }();
 
 </script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
   </main>
 
@@ -283,6 +350,11 @@ setTimeout(function(){i()},100)
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -298,7 +370,7 @@ setTimeout(function(){i()},100)
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签&nbsp;",
+        "给博客插入网易云音乐&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,

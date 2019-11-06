@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wy200088.github.io/"/>
-  <updated>2019-11-05T03:02:14.951Z</updated>
+  <updated>2019-11-06T02:24:36.133Z</updated>
   <id>https://wy200088.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给博客插入网易云音乐</title>
+    <link href="https://wy200088.github.io/2019/11/06/%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    <id>https://wy200088.github.io/2019/11/06/给博客插入网易云音乐/</id>
+    <published>2019-11-06T02:01:30.000Z</published>
+    <updated>2019-11-06T02:24:36.133Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><h1 id="Hexo博客插入网易云音乐"><a href="#Hexo博客插入网易云音乐" class="headerlink" title="Hexo博客插入网易云音乐"></a>Hexo博客插入网易云音乐</h1><h4 id="一、选择自己喜欢的音乐"><a href="#一、选择自己喜欢的音乐" class="headerlink" title="一、选择自己喜欢的音乐"></a>一、选择自己喜欢的音乐</h4><p>  首先你要先去网易云音乐的官网寻找自己喜欢的音乐，不过有些音乐是有版权的有些音乐是没有版权的，有版权的可以生成外联播放器，没有版权的则是不能生成的，所以第一步要选好自己喜欢的音乐也是看清楚自己喜欢的音乐有没有版权。</p><img src="https://img2018.cnblogs.com/blog/1242355/201903/1242355-20190302164911990-1606880343.png" srcset="/img/loading.gif"><p>可以生成的话就会出现这个东西~</p><img src="https://img2018.cnblogs.com/blog/1242355/201903/1242355-20190302165443246-736866412.png" srcset="/img/loading.gif"><h4 id="二、添加到博客中"><a href="#二、添加到博客中" class="headerlink" title="二、添加到博客中"></a>二、添加到博客中</h4><p>  在上一步中我们已经获取到网易云音乐插件的HTML代码，然后我们就可以找到需要加入音乐的页面插入这个代码。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"music163player"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">iframe</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">marginwidth</span>=<span class="string">"0"</span> <span class="attr">marginheight</span>=<span class="string">"0"</span> <span class="attr">width</span>=<span class="string">280</span> <span class="attr">height</span>=<span class="string">86</span> <span class="attr">src</span>=<span class="string">"//music.163.com/outchain/player?type=2&amp;id=33911781&amp;auto=1&amp;height=66"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><p>当然你还可以用<font color="#blue" face="微软雅黑">CSS position属性</font>进行定位，可以说是想放到页面的哪里就放到哪里。</p><p><font color="#00BFFF" face="微软雅黑" size="3">好了添加网易云音乐插件很简单，其实就是将代码插入你想要个页面的html代码里就好了，主题不同可能你需要插入到的文件也不同，所以在插入的时候自己一定要搞明白自己的主题哪个文件是哪个界面，拜拜~</font></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+
+&lt;h1 id=&quot;Hexo博客插入网易云音乐&quot;&gt;&lt;a href=&quot;#Hexo博客插入网易云音乐&quot; class=&quot;headerlink&quot; title=&quot;Hexo博客插入网易云音乐&quot;&gt;&lt;/a&gt;H
+      
+    
+    </summary>
+    
+    
+      <category term="Hexo博客" scheme="https://wy200088.github.io/categories/Hexo%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="Hexo添加音乐" scheme="https://wy200088.github.io/tags/Hexo%E6%B7%BB%E5%8A%A0%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA对象内存图分析与详解</title>
