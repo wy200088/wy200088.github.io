@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>给博客加入B站视频</title>
+    <link href="undefined2019/11/06/%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%8A%A0%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91/"/>
+    <url>2019/11/06/%E7%BB%99%E5%8D%9A%E5%AE%A2%E5%8A%A0%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91/</url>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><h1 id="Hexo博客插入bilibili视频"><a href="#Hexo博客插入bilibili视频" class="headerlink" title="Hexo博客插入bilibili视频"></a>Hexo博客插入bilibili视频</h1><h4 id="一、选择自己喜欢的视频"><a href="#一、选择自己喜欢的视频" class="headerlink" title="一、选择自己喜欢的视频"></a>一、选择自己喜欢的视频</h4><p>首先代开哔哩哔哩官网，然后去找自己想要加入的视频，打开那个视频，将鼠标移动到分享按钮然后会出现视频播放器的html代码。</p><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4242498199,1328953498&fm=173&app=49&f=JPEG?w=640&h=368&s=4208F9021687B8AFA717055E030010E2" srcset="/img/loading.gif"><p>将其复制下来。</p><h4 id="二、在想要的地方插入视频外链"><a href="#二、在想要的地方插入视频外链" class="headerlink" title="二、在想要的地方插入视频外链"></a>二、在想要的地方插入视频外链</h4><p>我们知道在md中可以直接插入html代码，所以直接找到自己想要插入的界面找到相对应的文件，将代码拷贝进去即可，不过直接复制过来的代码拷贝进去的效果是自适应的一个状态，无法快进无法全屏十分不舒服。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure><p>将其修改一下src内的内容，于是又改了改播放器的样式给他加上了宽高等。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">width</span>=<span class="string">"780"</span> <span class="attr">height</span>=<span class="string">"480"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure><img src="https://teamssix.oss-cn-hangzhou.aliyuncs.com/bilibili2.png" srcset="/img/loading.gif"><p>但是在手机上会变成这个亚子，还是会有一些不足。</p><p>然后博主又在网上找了很多解决这个的办法，最终找到一个还不错的处理方法。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 100%; height: 0; padding-bottom: 75%;"</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span> <span class="attr">style</span>=<span class="string">"position: absolute; width: 100%; height: 100%; left: 0; top: 0;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><img src="https://teamssix.oss-cn-hangzhou.aliyuncs.com/bilibili3.png" srcset="/img/loading.gif"><p>不过这还是有缺陷的，在手机端不可以全屏，还是有些美中不足，所以只好也将视频播放链接放到视频下面了，如果不能全屏就只能去源链接去看了。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Hexo博客</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo添加bilibili视频</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>给博客插入网易云音乐</title>
     <link href="undefined2019/11/06/%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
     <url>2019/11/06/%E7%BB%99%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/</url>
@@ -113,14 +138,14 @@
     
     <categories>
       
-      <category>Web3D</category>
+      <category>HTML</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Web</tag>
+      <tag>html3D</tag>
       
     </tags>
     

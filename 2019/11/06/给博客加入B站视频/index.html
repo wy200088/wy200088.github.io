@@ -14,7 +14,7 @@
   <meta name="description" content>
   <meta name="author" content="Blue">
   <meta name="keywords" content>
-  <title>Tag - Web ~ Blue&#39;s caveolae</title>
+  <title>给博客加入B站视频 ~ Blue&#39;s caveolae</title>
   <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/lib/mdbootstrap/css/mdb.min.css">
@@ -30,7 +30,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -90,7 +90,7 @@
 </nav>
 
     <div class="view intro-2" id="background"
-         style="background: url('/img/bqbj.png')no-repeat center center;
+         style="background: url('/img/wzybj.png')no-repeat center center;
            background-size: cover;
            background-attachment: fixed;">
       <div class="full-bg-img">
@@ -100,6 +100,9 @@
               
             </span>
 
+            
+              <br>
+              <p class="mt-3">Wednesday, November 6th 2019, 10:43 am</p>
             
           </div>
 
@@ -111,27 +114,93 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board">
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">1 posts in total.</p>
-  <hr>
-  
-    
       
-      <p class="h5">2019</p>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="py-5 z-depth-3" id="board">
+        <div class="post-content mx-auto">
+          <div class="markdown-body">
+            <meta name="referrer" content="no-referrer">
+
+<h1 id="Hexo博客插入bilibili视频"><a href="#Hexo博客插入bilibili视频" class="headerlink" title="Hexo博客插入bilibili视频"></a>Hexo博客插入bilibili视频</h1><h4 id="一、选择自己喜欢的视频"><a href="#一、选择自己喜欢的视频" class="headerlink" title="一、选择自己喜欢的视频"></a>一、选择自己喜欢的视频</h4><p>首先代开哔哩哔哩官网，然后去找自己想要加入的视频，打开那个视频，将鼠标移动到分享按钮然后会出现视频播放器的html代码。</p>
+<img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=4242498199,1328953498&fm=173&app=49&f=JPEG?w=640&h=368&s=4208F9021687B8AFA717055E030010E2" srcset="/img/loading.gif">
+
+<p>将其复制下来。</p>
+<h4 id="二、在想要的地方插入视频外链"><a href="#二、在想要的地方插入视频外链" class="headerlink" title="二、在想要的地方插入视频外链"></a>二、在想要的地方插入视频外链</h4><p>我们知道在md中可以直接插入html代码，所以直接找到自己想要插入的界面找到相对应的文件，将代码拷贝进去即可，不过直接复制过来的代码拷贝进去的效果是自适应的一个状态，无法快进无法全屏十分不舒服。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>将其修改一下src内的内容，于是又改了改播放器的样式给他加上了宽高等。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">width</span>=<span class="string">"780"</span> <span class="attr">height</span>=<span class="string">"480"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://teamssix.oss-cn-hangzhou.aliyuncs.com/bilibili2.png" srcset="/img/loading.gif">
+
+<p>但是在手机上会变成这个亚子，还是会有一些不足。</p>
+<p>然后博主又在网上找了很多解决这个的办法，最终找到一个还不错的处理方法。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position: relative; width: 100%; height: 0; padding-bottom: 75%;"</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">"视频链接"</span> <span class="attr">scrolling</span>=<span class="string">"no"</span> <span class="attr">border</span>=<span class="string">"0"</span> <span class="attr">frameborder</span>=<span class="string">"no"</span> <span class="attr">framespacing</span>=<span class="string">"0"</span> <span class="attr">allowfullscreen</span>=<span class="string">"true"</span> <span class="attr">style</span>=<span class="string">"position: absolute; width: 100%; height: 100%; left: 0; top: 0;"</span>&gt;</span> <span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="https://teamssix.oss-cn-hangzhou.aliyuncs.com/bilibili3.png" srcset="/img/loading.gif">
+
+<p>不过这还是有缺陷的，在手机端不可以全屏，还是有些美中不足，所以只好也将视频播放链接放到视频下面了，如果不能全屏就只能去源链接去看了。</p>
+
+            <hr>
+          </div>
+          <br>
+          <div>
+            
+              <p>
+                <i class="iconfont icon-inbox"></i>
+                
+                  <a class="hover-with-bg" href="/categories/Hexo%E5%8D%9A%E5%AE%A2">Hexo博客</a>
+                  &nbsp;
+                
+              </p>
+            
+            <p>
+              <i class="iconfont icon-tag"></i>
+              
+                <a class="hover-with-bg" href="/tags/Hexo%E6%B7%BB%E5%8A%A0bilibili%E8%A7%86%E9%A2%91">Hexo添加bilibili视频</a>
+              
+            </p>
+            
+              <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" rel="nofollow noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-2 toc-container">
+      
+  <div id="toc">
+    <p class="h4"><i class="far fa-list-alt"></i>&nbsp;TOC</p>
+    <div id="tocbot"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-md">
+    <div class="container custom post-content mx-auto">
+      <img src="/img/skm.png" srcset="/img/loading.gif"  class="rounded mx-auto d-block mt-5" style="width:310px; height:175px;"> 博主初来乍到还有许多不懂的地方，慢慢进步！您的赏识是我的动力，今天你给我一块钱，明天我还你一片天！
+    </div>
+  </div>
+
+
+<!-- Comments -->
+<div class="col-lg-7 mx-auto nopadding-md">
+  <div class="container comments mx-auto" id="comments">
     
-    <a href="/2019/10/22/HTML-3D讲解/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">HTML 3D讲解</span>
-      <span style="float: right;">10-22</span>
-    </a>
-  
+      <br><br>
+      
+      
+
+    
+  </div>
 </div>
 
 <script>
@@ -231,12 +300,6 @@ setTimeout(function(){i()},100)
 }();
 
 </script>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     
   </main>
 
@@ -295,6 +358,11 @@ setTimeout(function(){i()},100)
   <script src="/js/lazyload.js" ></script>
 
 
+  
+    <script src="/lib/tocbot/tocbot.min.js" ></script>
+  
+  <script src="/js/post.js" ></script>
+
 
   <script src="/lib/prettify/prettify.min.js" ></script>
   <script>
@@ -310,7 +378,7 @@ setTimeout(function(){i()},100)
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Do - Web&nbsp;",
+        "给博客加入B站视频&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
